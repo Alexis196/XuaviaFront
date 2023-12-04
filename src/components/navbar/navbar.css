@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border-bottom: 1px solid rgb(74, 194, 194);
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+  }
+  
+  .div-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    max-height: 50px; 
+    margin-right: 20px; 
+  }
+  
+  
