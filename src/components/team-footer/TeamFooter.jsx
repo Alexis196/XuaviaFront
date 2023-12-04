@@ -1,4 +1,4 @@
-import './equipo-footer.css';
+import './team-footer.css';
 import camilaDelValle from '../../assets/img/Camila del Valle.jpg';
 import giovannaOrsi from '../../assets/img/Giovanna Antonella Orsi.jpeg';
 import agustinVidela from '../../assets/img/Agustin Videla.jpeg';
@@ -6,7 +6,7 @@ import exequielMartinez from '../../assets/img/Exequiel Martinez.jpeg';
 import alexisFranco from '../../assets/img/Alexis Franco.png';
 import linkedinLogo from '../../assets/img/LinkedIn_logo.png';
 
-const EquipoFooter = () => {
+const TeamFooter = () => {
   return (
     <div className="equipo">
       <h3>Desarrolladores de este equipo</h3>
@@ -49,4 +49,4 @@ const EquipoFooter = () => {
   );
 };
 
-export default EquipoFooter;
+export default TeamFooter;

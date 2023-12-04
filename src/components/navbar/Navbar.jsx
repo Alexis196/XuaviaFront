@@ -1,12 +1,14 @@
 import './navbar.css'
+import {Link as Anchor} from 'react-router-dom'
 import logo from '../../assets/img/logo.png'
+import user from '../../assets/img/icon-user.png'
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid navbar-container">
                 <div className='div-logo'>
-                    <a href="#"><img className='logo' src={logo} alt="logo" /></a>
+                    <Anchor to={'/'}><img className='logo' src={logo} alt="logo" /></Anchor>
                 </div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -16,17 +18,16 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse links" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="/index.html" style={{ color: 'white' }}>Inicio</a>
+                            <Anchor className="nav-link" to={'/'} style={{ color: 'white' }}>Inicio</Anchor>
                         </li>
                         <li className="nav-item" id="nav1">
-                            <a className="nav-link" href="./assets/html/mascoters.html" style={{ color: 'white' }}>Mascotas</a>
+                            <Anchor className="nav-link" to={'/servicios'} style={{ color: 'white' }}>Mascotas</Anchor>
                         </li>
                         <li className="nav-item" id="nav2">
-                            <a className="nav-link" href="./assets/html/nosotros.html" style={{ color: 'white' }}>Nosotros</a>
+                            <Anchor className="nav-link" to={'/nosotros'} style={{ color: 'white' }}>Nosotros</Anchor>
                         </li>
                     </ul>
-                    <button className="btn-login" id="login" style={{ color: 'white' }}>Iniciar sesión</button>
-                    <button className="no-logout" id="logout" style={{ color: 'white' }}>Cerrar sesión</button>
+                    <img className='icon-user' src={user} alt="icon-user" />
                 </div>
             </div>
         </nav>

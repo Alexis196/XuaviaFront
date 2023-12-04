@@ -1,12 +1,12 @@
 import './footer.css'
-import EquipoFooter from '../equipo-footer/EquipoFooter'
+import TeamFooter from '../team-footer/TeamFooter'
 import ContactFooterForm from '../ContactFooterForm/ContactFooterForm'
 import FooterTech from '../FooterTech/FooterTech'
 
 const Footer = () => {
   return (
     <footer className='bg-dark'>
-      <EquipoFooter />
+      <TeamFooter />
       <FooterTech />
       <ContactFooterForm />
     </footer>
