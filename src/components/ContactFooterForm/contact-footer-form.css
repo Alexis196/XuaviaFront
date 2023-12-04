@@ -1,0 +1,55 @@
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    color: #fff;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.campos label {
+    color: rgb(74, 194, 194);
+}
+
+input {
+    background: none;
+    border: none;
+}
+
+.campos-input {
+    padding-left: 5px;
+    border-bottom: 1px solid rgb(74, 194, 194);
+}
+
+.campos-input::placeholder {
+    color: #fff;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+    border: none;
+    background: none;
+}
+
+.enviar {
+    width: 120px;
+    border: 2px solid rgb(74, 194, 194);
+    ;
+    background-color: transparent;
+    color: rgb(74, 194, 194);
+    font-weight: 700;
+    align-self: flex-end;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    border: 2px solid #000;
+    background-color: rgb(74, 194, 194);
+    color: #000;
+}
