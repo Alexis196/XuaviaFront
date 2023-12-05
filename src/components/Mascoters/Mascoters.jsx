@@ -1,61 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './mascoters.css';
-
-const servicios = [
-  {
-    id: 1,
-    nombre: 'Nombre Mascoter 1',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },
-  {
-    id: 2,
-    nombre: 'Nombre Mascoter 2',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },{
-    id: 1,
-    nombre: 'Nombre Mascoter 1',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },
-  {
-    id: 2,
-    nombre: 'Nombre Mascoter 2',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },{
-    id: 1,
-    nombre: 'Nombre Mascoter 1',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },
-  {
-    id: 2,
-    nombre: 'Nombre Mascoter 2',
-    descripcion: 'Pellentesque habitant morbi tristique...',
-    imagen: './img/usuario.png',
-  },
-  // Agrega más objetos según sea necesario
-];
+import axios from 'axios';
+import { Link as Anchor } from 'react-router-dom';
 
 const Mascoters = () => {
+  const [servicios, setServicios] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const url = 'http://localhost:8080/services';
+
+    axios.get(url)
+      .then((response) => {
+        const servicios = response.data.services;
+        setServicios(servicios)
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <section className="mascoter">
       <div className="seccion-mascoter">
-        {servicios.map((servicio) => (
-          <div key={servicio.id} className="card-user">
-            <div className="info-user">
-              <img className="foto-perfil" src={servicio.imagen} alt="foto-perfil" />
-              <a href="#" className="header">
-                {servicio.nombre}
-              </a>
+        {Array.isArray(servicios) && servicios.length > 0 ? (
+          servicios.map((servicio) => (
+            <div key={servicio._id} className="card-user">
+              <div className="info-user">
+                <img className="foto-perfil" src={servicio.imagen} alt="foto-perfil" />
+                <Anchor to='/' className="header">
+                  {servicio.name}
+                </Anchor>
+              </div>
+              <div className="precio">
+                <p>{`Precio: ${servicio.price}`}</p>
+              </div>
             </div>
-            <div className="enunciado">
-              <p>{servicio.descripcion}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>No hay servicios disponibles.</p>
+        )}
       </div>
     </section>
   );
