@@ -1,20 +1,49 @@
 // Register.jsx
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../ModalLogin/modal-login.css';
 import './register.css'
 
 function Register() {
-  const nombre = useRef();
+  const [newRol, setNewRol] = useState([]);
+  const name = useRef();
   const mail = useRef();
   const password = useRef();
   const rol = useRef();
+  const navigate = useNavigate();
+
+  console.log(newRol)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:8080/roles')
+      .then((response) => {
+        setNewRol(response.data.rol);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [])
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('hola');
-  }
+    const user = {
+      name: name.current.value,
+      mail: mail.current.value,
+      password: password.current.value,
+      rol: rol.current.value
+    };
+    try{
+      axios.post('http://localhost:8080/users', user);
+      setTimeout(() => {
+        navigate('/login')
+      }, 1000)
+    }
+    catch (err){
+      console.log(err)
+    }
+    }
 
   return (
     <div className="register-box" id="">
@@ -24,11 +53,11 @@ function Register() {
           <div className="user-box">
             <input
               type="text"
-              name="nombre"
-              ref={nombre}
+              name="name"
+              ref={name}
               required
             />
-            <label>Nombre</label>
+            <label>name</label>
           </div>
           <div className="user-box">
             <input
@@ -39,11 +68,21 @@ function Register() {
             />
             <label>Email</label>
           </div>
+          <div className="user-box">
+            <input
+              type="password"
+              name="password"
+              ref={password}
+              required
+            />
+            <label>Password</label>
+          </div>
           <div className="select">
             <label>Rol:</label>
             <select name="rol" ref={rol} required>
-              <option value="1">Opción 1</option>
-              <option value="2">Opción 2</option>
+              {newRol.map( rol => {
+                return <option key={rol._id} value={rol._id}>{rol.rol}</option>
+              })}
             </select>
           </div>
           <div className="register">
