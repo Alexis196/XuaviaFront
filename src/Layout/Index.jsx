@@ -5,12 +5,12 @@ import Footer from '../components/footer/Footer'
 
 const Index = () => {
     return (
-        <body>
+        <div>
             <Navbar />
             <Carousel />
             <Recomendaciones />
             <Footer />
-        </body>
+        </div>
     )
 }
 

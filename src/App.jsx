@@ -1,18 +1,11 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Inicio from './Layout/Index'
-import Services from './Layout/Services'
-import Us from './Layout/Us'
+import { RouterProvider } from 'react-router-dom'
+import {router} from './pages/index'
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/servicios" element={<Services />} />
-        <Route path="/nosotros" element={<Us />} />
-      </Routes>
-    </BrowserRouter>
+      <RouterProvider router={router} />
   )
 }
 

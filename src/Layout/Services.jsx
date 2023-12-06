@@ -4,11 +4,11 @@ import Footer from '../components/footer/Footer'
 import Mascoters from '../components/Mascoters/Mascoters'
 const Services = () => {
   return (
-    <body>
+    <div>
       <Navbar /> 
       <Mascoters />
       <Footer />    
-    </body>
+    </div>
   )
 }
 
