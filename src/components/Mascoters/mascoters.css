@@ -10,6 +10,9 @@
     width: 90%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 2rem;
+}
+.card-user{
+    min-width: 280px;
 }
