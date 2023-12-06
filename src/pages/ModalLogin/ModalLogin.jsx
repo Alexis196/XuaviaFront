@@ -19,7 +19,6 @@ const ModalLogin = () => {
         password: password.current.value
       }
       const response = await axios.post('http://localhost:8080/users/signin', formData);
-      console.log('Respuesta del servidor:', response.data);
       localStorage.setItem('user', JSON.stringify(response.data));
       setUser(response.data);
       event.target.reset();

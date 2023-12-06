@@ -12,7 +12,6 @@ function Register() {
   const rol = useRef();
   const navigate = useNavigate();
 
-  console.log(newRol)
 
   useEffect(() => {
     axios
