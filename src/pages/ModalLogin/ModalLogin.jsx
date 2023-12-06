@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './modal-login.css';
 
-const ModalLogin = ({ closeModal }) => {
+const ModalLogin = () => {
+  const [user, setUser] = useState({});
   const mail = useRef();
   const password = useRef();
   const navigate = useNavigate();
@@ -19,7 +20,10 @@ const ModalLogin = ({ closeModal }) => {
       }
       const response = await axios.post('http://localhost:8080/users/signin', formData);
       console.log('Respuesta del servidor:', response.data);
-      event.target.reset()
+      localStorage.setItem('user', JSON.stringify(response.data));
+      setUser(response.data);
+      event.target.reset();
+
       setTimeout(() => {
         navigate('/')
       }, 1000)
@@ -27,6 +31,13 @@ const ModalLogin = ({ closeModal }) => {
       console.error('Error al enviar el formulario:', error);
     }
   };
+  useEffect(()=>{
+     const localUser = JSON.parse(localStorage.getItem('user'));
+    if (localUser) {
+      setUser(localUser);
+    }
+  },[])
+
 
   return (
     <div className="show-modal" id="login-modal">
