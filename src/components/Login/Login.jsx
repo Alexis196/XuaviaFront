@@ -1,26 +1,45 @@
-import './login.css'
-import { useState } from 'react'
-// import Register from '../Register/Register'
-import ModalLogin from '../../pages/ModalLogin/ModalLogin'
-import { Link as Anchor } from 'react-router-dom'
+import './login.css';
+import { useState, useEffect } from 'react';
+import ModalLogin from '../../pages/ModalLogin/ModalLogin';
+import { Link as Anchor } from 'react-router-dom';
+import LogOut from '../LogOut/Logout';
 
 function Login() {
-    const [showModalLogin, setShowModalLogin] = useState(false)
+    const [showModalLogin, setShowModalLogin] = useState(false);
+    const [userLS, setUserLS] = useState({});
+
+    useEffect(() => {
+        const userStorage = localStorage.getItem('user');
+        setUserLS(JSON.parse(userStorage));
+    }, [])
 
     function handleInicio() {
-        setShowModalLogin(!showModalLogin)
+        setShowModalLogin(true);
     }
-    function handleRegistro() {
-        console.log('registro')
+
+    function handleUserUpdate() {
+        const updatedUser = JSON.parse(localStorage.getItem('user'));
+        setUserLS(updatedUser);
+        setShowModalLogin(false);
     }
 
     return (
         <div className="login bg-dark">
-            <Anchor to='/login' className='login-text'>Iniciar sesión</Anchor>
-            {showModalLogin && <ModalLogin closeModal={handleInicio} />}
-            <Anchor to='/users' className='login-text'>Registrate</Anchor>
+            {userLS ? (
+                <LogOut onUpdateUser={handleUserUpdate} />
+            ) : (
+                <>
+                    <Anchor to="/login" className="login-text" onClick={handleInicio}>
+                        Iniciar sesión
+                    </Anchor>
+                    {showModalLogin && <ModalLogin closeModal={() => setShowModalLogin(false)} />}
+                    <Anchor to="/users" className="login-text">
+                        Regístrate
+                    </Anchor>
+                </>
+            )}
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;
