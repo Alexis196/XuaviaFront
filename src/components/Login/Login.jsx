@@ -18,7 +18,7 @@ function Login() {
         <div className="login bg-dark">
             <Anchor to='/login' className='login-text'>Iniciar sesión</Anchor>
             {showModalLogin && <ModalLogin closeModal={handleInicio} />}
-            <Anchor onClick={handleRegistro} className='login-text'>Registrate</Anchor>
+            <Anchor to='/users' className='login-text'>Registrate</Anchor>
         </div>
     )
 }

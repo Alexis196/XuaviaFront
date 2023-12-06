@@ -3,6 +3,7 @@ import MainLayout from "../Layout/MainLayout/MainLayout";
 import IndexLayout from "../Layout/IndexLayout/IndexLayout";
 import Index from "../components/Index/Index";
 import ModalLogin from "./ModalLogin/ModalLogin";
+import Register from "./Register/Register";
 
 export const router = createBrowserRouter([
     {path: "/", 
@@ -17,6 +18,6 @@ export const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             {path: '/login', element: <ModalLogin />},
-            // {path: "/*", element: <NotFound/>}
+            {path: '/users', element: <Register/>},
         ]
     }])
