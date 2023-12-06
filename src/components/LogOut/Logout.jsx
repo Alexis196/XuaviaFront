@@ -11,7 +11,6 @@ const LogOut = ({ onUpdateUser }) => {
         };
         axios.post('http://localhost:8080/users/signout', "", { headers })
             .then((response) => {
-                console.log(response.data);
                 localStorage.removeItem('user');
                 onUpdateUser(); // Llamar a la función prop proporcionada por el componente padre
             })
