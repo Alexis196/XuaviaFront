@@ -1,9 +1,17 @@
 import './navbar.css'
-import {Link as Anchor} from 'react-router-dom'
+import { useState } from 'react'
+import { Link as Anchor } from 'react-router-dom'
 import logo from '../../assets/img/logo.png'
 import user from '../../assets/img/icon-user.png'
+import Login from '../Login/Login'
+
 
 const Navbar = () => {
+    const [isLogin, setIsLogin] = useState(false)
+    function handleLogin() {
+        setIsLogin(!isLogin)
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid navbar-container">
@@ -27,7 +35,8 @@ const Navbar = () => {
                             <Anchor className="nav-link" to={'/nosotros'} style={{ color: 'white' }}>Nosotros</Anchor>
                         </li>
                     </ul>
-                    <img className='icon-user' src={user} alt="icon-user" />
+                    <img onClick={handleLogin} className='icon-user' src={user} alt="icon-user" />
+                    {isLogin && <Login />}
                 </div>
             </div>
         </nav>

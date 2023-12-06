@@ -5,12 +5,12 @@ import NosotrosPage from "../components/InfoUs/InfoUs"
 
 const Us = () => {
   return (
-    <body>
+    <div>
         <Navbar />
         <BannerUs />
         <NosotrosPage />
         <Footer />
-    </body>
+    </div>
   )
 }
 
