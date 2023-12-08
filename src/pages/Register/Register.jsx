@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link as Anchor } from 'react-router-dom';
 import axios from 'axios';
 import '../ModalLogin/modal-login.css';
 import './register.css'
@@ -55,7 +55,7 @@ function Register() {
               ref={name}
               required
             />
-            <label>name</label>
+            <label>Nombre</label>
           </div>
           <div className="user-box">
             <input
@@ -73,7 +73,7 @@ function Register() {
               ref={password}
               required
             />
-            <label>Password</label>
+            <label>Contraseña</label>
           </div>
           <div className="select">
             <label>Rol:</label>
@@ -84,10 +84,10 @@ function Register() {
             </select>
           </div>
           <div className="register">
-            <span>¿No tienes una cuenta?</span>
-            <a className="btn-register" href="#register">
-              Regístrate
-            </a>
+            <span>¿Tiene una cuenta?</span>
+            <Anchor to='/iniciosesion' className="btn-register">
+              Iniciar sesión
+            </Anchor>
           </div>
           <button className="btn-login btn-login2" type="submit">
             Iniciar sesión

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link as Anchor } from 'react-router-dom';
 import axios from 'axios';
 import './modal-login.css';
 
@@ -63,9 +63,9 @@ const ModalLogin = () => {
           </div>
           <div className="register">
             <span>¿No tienes una cuenta?</span>
-            <a className="btn-register" href="#register">
+            <Anchor to='/registro' className="btn-register">
               Regístrate
-            </a>
+            </Anchor>
           </div>
           <button className="btn-login btn-login2" type="submit">
             Iniciar sesión
