@@ -93,6 +93,15 @@ const FormServices = () => {
                             )
                         })}
                     </select>
+                    {/* <div className="user-box">
+                        <input
+                            type="file"
+                            name="file"
+                            ref={price}
+                            required
+                        />
+                        <label>Imágenes</label>
+                    </div> */}
                     <button className="btn-login btn-login2" type="submit">
                         Agregar
                     </button>
