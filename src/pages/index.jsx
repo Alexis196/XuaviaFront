@@ -7,6 +7,8 @@ import Register from "./Register/Register";
 import Services from "./Services/Services";
 import Us from "./Us/Us";
 import NotFound from "./NotFound/NotFound";
+import AddServices from "./AddServices/AddServices";
+
 
 export const router = createBrowserRouter([
     {path: "/", 
@@ -20,10 +22,11 @@ export const router = createBrowserRouter([
         path: "/",
         element: <MainLayout />,
         children: [
-            {path: '/login', element: <ModalLogin />},
-            {path: '/users', element: <Register/>},
+            {path: '/iniciosesion', element: <ModalLogin />},
+            {path: '/registro', element: <Register/>},
             {path: '/servicios', element: <Services />},
             {path: '/nosotros', element: <Us />},
+            {path: '/servicios/nuevoservicio/', element: <AddServices />},
             {path: "/*", element: <NotFound/>}
         ]
     }])

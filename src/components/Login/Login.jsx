@@ -29,11 +29,10 @@ function Login() {
                 <LogOut onUpdateUser={handleUserUpdate} />
             ) : (
                 <>
-                    <Anchor to="/login" className="login-text" onClick={handleInicio}>
+                    <Anchor to="/iniciosesion" className="login-text" onClick={handleInicio}>
                         Iniciar sesión
                     </Anchor>
-                    {showModalLogin && <ModalLogin closeModal={() => setShowModalLogin(false)} />}
-                    <Anchor to="/users" className="login-text">
+                    <Anchor to="/registro" className="login-text">
                         Regístrate
                     </Anchor>
                 </>
