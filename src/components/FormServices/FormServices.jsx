@@ -1,7 +1,11 @@
 import { useRef, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { toast } from 'react-toastify';
+
 
 const FormServices = () => {
+    const navigate = useNavigate();
     const [categories, setCategories] = useState([])
 
     const name = useRef()
@@ -10,16 +14,16 @@ const FormServices = () => {
     const category = useRef()
 
 
-    useEffect(() => {
-        const url = 'http://localhost:8080/categories'
-        axios.get(url)
-            .then((response) => {
-                setCategories(response.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }, [])
+        useEffect(() => {
+            const url = 'http://localhost:8080/categories'
+            axios.get(url)
+                .then((response) => {
+                    setCategories(response.data)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,7 +45,19 @@ const FormServices = () => {
         const url = 'http://localhost:8080/services/addservices';
         axios.post(url, data, headers)
             .then((response) => {
-                console.log(response.data);
+                toast.success('Felicitaciones! Nuevo servicio creado', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+                setTimeout(() => {
+                    navigate('/servicios')
+                }, 1300)
             })
             .catch((error) => {
                 console.log(error);
@@ -93,15 +109,6 @@ const FormServices = () => {
                             )
                         })}
                     </select>
-                    {/* <div className="user-box">
-                        <input
-                            type="file"
-                            name="file"
-                            ref={price}
-                            required
-                        />
-                        <label>Imágenes</label>
-                    </div> */}
                     <button className="btn-login btn-login2" type="submit">
                         Agregar
                     </button>

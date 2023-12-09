@@ -3,6 +3,7 @@ import { useNavigate, Link as Anchor } from 'react-router-dom';
 import axios from 'axios';
 import '../ModalLogin/modal-login.css';
 import './register.css'
+import { toast } from 'react-toastify';
 
 function Register() {
   const [newRol, setNewRol] = useState([]);
@@ -34,11 +35,31 @@ function Register() {
     };
     try{
       axios.post('http://localhost:8080/users', user);
+      toast.success(`Bienvenido ${user.name}. Por favor inicia sesión`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        })
       setTimeout(() => {
-        navigate('/login')
+        navigate('/iniciosesion')
       }, 1000)
     }
     catch (err){
+      toast.error(`Ocurrió un error al intentar registrarte ${err.message}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        })
       console.log(err)
     }
     }

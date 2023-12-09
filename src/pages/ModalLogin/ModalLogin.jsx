@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, Link as Anchor } from 'react-router-dom';
 import axios from 'axios';
 import './modal-login.css';
+import { toast } from 'react-toastify';
 
 const ModalLogin = () => {
   const [user, setUser] = useState({});
@@ -12,9 +13,9 @@ const ModalLogin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
-      const formData ={
+      const formData = {
         mail: mail.current.value,
         password: password.current.value
       }
@@ -22,20 +23,40 @@ const ModalLogin = () => {
       localStorage.setItem('user', JSON.stringify(response.data));
       setUser(response.data);
       event.target.reset();
+      toast.success(`¡Bienvenido ${response.data.name}!`, {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      })
 
       setTimeout(() => {
         navigate('/')
       }, 1000)
     } catch (error) {
+      toast.error(`Error al iniciar sesión`, {
+        position: "top-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      })
       console.error('Error al enviar el formulario:', error);
     }
   };
-  useEffect(()=>{
-     const localUser = JSON.parse(localStorage.getItem('user'));
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem('user'));
     if (localUser) {
       setUser(localUser);
     }
-  },[])
+  }, [])
 
 
   return (

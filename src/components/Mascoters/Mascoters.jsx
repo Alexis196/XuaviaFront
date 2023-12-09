@@ -27,7 +27,7 @@ const Mascoters = () => {
           servicios.map((servicio) => (
             <div key={servicio._id} className="card-user">
               <div className="info-user">
-                <img className="foto-perfil" src={servicio.imagen} alt="foto-perfil" />
+                <img className="foto-perfil" src={servicio?.image} alt="foto-perfil" />
                 <Anchor to='/' className="header">
                   {servicio.name}
                 </Anchor>

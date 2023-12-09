@@ -1,6 +1,7 @@
 import './log-out.css';
 import axios from 'axios';
 import { useState } from 'react';
+import {toast} from 'react-toastify';
 
 const LogOut = ({ onUpdateUser }) => {
     const handleLogout = (e) => {
@@ -12,7 +13,17 @@ const LogOut = ({ onUpdateUser }) => {
         axios.post('http://localhost:8080/users/signout', "", { headers })
             .then((response) => {
                 localStorage.removeItem('user');
-                onUpdateUser(); // Llamar a la función prop proporcionada por el componente padre
+                onUpdateUser();
+                toast.success('Esperamos que pronto estés devuelta', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    })
             })
             .catch((error) => {
                 console.error(error);
