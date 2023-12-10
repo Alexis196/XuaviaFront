@@ -1,10 +1,16 @@
 import FormServices from "../../components/FormServices/FormServices"
+import Proteccion from "../../components/Proteccion/Proteccion"
 
 const AddServices = () => {
+  const token = JSON.parse(localStorage.getItem('user'))?.token
   return (
-    <div>
-        <FormServices />
-    </div>
+    <>
+      {token ? (
+        <div>
+          <FormServices />
+        </div>
+      ) : <Proteccion />}
+    </>
   )
 }
 

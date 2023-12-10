@@ -1,9 +1,11 @@
 import './log-out.css';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
 
 const LogOut = ({ onUpdateUser }) => {
+    const navigate = useNavigate();
     const handleLogout = (e) => {
         const localUser = JSON.parse(localStorage.getItem('user'));
 
@@ -24,6 +26,9 @@ const LogOut = ({ onUpdateUser }) => {
                     progress: undefined,
                     theme: "dark",
                     })
+                setTimeout(() => {
+                    navigate('/');
+                }, 1500)
             })
             .catch((error) => {
                 console.error(error);

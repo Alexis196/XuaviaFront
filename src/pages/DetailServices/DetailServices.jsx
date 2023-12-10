@@ -2,8 +2,10 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './DetailServices.css';
+import Proteccion from '../../components/Proteccion/Proteccion';
 
 const DetailServices = () => {
+    const token = JSON.parse(localStorage.getItem('user'))?.token
     const { id } = useParams();
     const [service, setService] = useState({});
 
@@ -21,19 +23,24 @@ const DetailServices = () => {
     }, [id]);
 
     return (
-        <div className='detail bg-secondary'>
-            <div className='detail-service'>
-                <div>
-                    <img src={service.image} alt={service.name} />
-                    <h2>{service.name}</h2>
+        <>
+            {token ? (
+                <div className='detail bg-secondary'>
+                    <div className='detail-service'>
+                        <div>
+                            <img src={service.image} alt={service.name} />
+                            <h2>{service.name}</h2>
+                        </div>
+                        <div>
+                            <h3>Descripción del servicio:</h3>
+                            <p>{service.detail}</p>
+                            <p>Precio: ${service.price}</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3>Descripción del servicio:</h3>
-                    <p>{service.detail}</p>
-                    <p>Precio: ${service.price}</p>
-                </div>
-            </div>
-        </div>
+            ) :
+                <Proteccion />}
+        </>
     );
 };
 
