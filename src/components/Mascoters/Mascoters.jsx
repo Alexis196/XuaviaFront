@@ -22,19 +22,19 @@ const Mascoters = () => {
 
   return (
     <section className="mascoter">
-      <div className="seccion-mascoter">
+      <div className="servicios-cards">
         {Array.isArray(servicios) && servicios.length > 0 ? (
           servicios.map((servicio) => (
-            <div key={servicio._id} className="card-user">
-              <div className="info-user">
-                <img className="foto-perfil" src={servicio?.image} alt="foto-perfil" />
-                <Anchor to={`/servicios/${servicio._id}`} className="header">
-                  {servicio.name}
-                </Anchor>
-              </div>
-              <div className="precio">
-                <p>{`Precio: ${servicio.price}`}</p>
-              </div>
+            <div key={servicio._id} className="card-service">
+              <Anchor to={`/servicios/${servicio._id}`} className="anchor-tarjet">
+                <div>
+                  <img className="foto-perfil" src={servicio?.image} alt={servicio.name} />
+                </div>
+                <div className="precio">
+                  <h2>{servicio.name}</h2>
+                  <p>{`Precio: ${servicio.price}`}</p>
+                </div>
+              </Anchor>
             </div>
           ))
         ) : (

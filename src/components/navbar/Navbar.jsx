@@ -30,7 +30,7 @@ const Navbar = () => {
                             <Anchor className="nav-link" to={'/'} style={{ color: 'white' }}>Inicio</Anchor>
                         </li>
                         <li className="nav-item" id="nav1">
-                            <Anchor className="nav-link" to={'/servicios'} style={{ color: 'white' }}>Mascotas</Anchor>
+                            <Anchor className="nav-link" to={'/servicios'} style={{ color: 'white' }}>Servicios</Anchor>
                         </li>
                         <li className="nav-item" id="nav2">
                             <Anchor className="nav-link" to={'/nosotros'} style={{ color: 'white' }}>Nosotros</Anchor>
