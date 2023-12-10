@@ -8,6 +8,7 @@ import Services from "./Services/Services";
 import Us from "./Us/Us";
 import NotFound from "./NotFound/NotFound";
 import AddServices from "./AddServices/AddServices";
+import DetailServices from "./DetailServices/DetailServices";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
             {path: '/servicios', element: <Services />},
             {path: '/nosotros', element: <Us />},
             {path: '/servicios/nuevoservicio/', element: <AddServices />},
+            {path: '/servicios/:id', element: <DetailServices />},
             {path: "/*", element: <NotFound/>}
         ]
     }])

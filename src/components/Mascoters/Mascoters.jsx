@@ -28,7 +28,7 @@ const Mascoters = () => {
             <div key={servicio._id} className="card-user">
               <div className="info-user">
                 <img className="foto-perfil" src={servicio?.image} alt="foto-perfil" />
-                <Anchor to='/' className="header">
+                <Anchor to={`/servicios/${servicio._id}`} className="header">
                   {servicio.name}
                 </Anchor>
               </div>
