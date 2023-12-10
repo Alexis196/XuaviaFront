@@ -1,17 +1,34 @@
 import './footer-tech.css';
-import htmlLogo from '../../assets/img/html.png';
-import cssLogo from '../../assets/img/css-3.png';
-import bootstrapLogo from '../../assets/img/Bootstrap_logo.svg.png';
-import trelloIcon from '../../assets/img/trello_icon_146085.png';
-import gitIcon from '../../assets/img/git.png';
-import githubIcon from '../../assets/img/github.png';
-import jsIcon from '../../assets/img/js.png';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Tecnologias = () => {
+  const [tecnologias, setTecnologias] = useState([]);
+
+  useEffect(() => {
+    const url = 'https://xuavia.onrender.com/technologies';
+    axios.get(url)
+      .then((response) => {
+        const tecnologias = response.data.technologies;
+        setTecnologias(tecnologias);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      })
+  }, [])
+
   return (
     <div className="tecnologias">
       <h3>Tecnologías</h3>
       <div className="todas-tarjetas">
+        {tecnologias.map((tecnologia) => (
+          <div className="tarjeta-tec" key={tecnologia._id}>
+            <img src={tecnologia.image} alt={tecnologia.name} />
+            <p>{tecnologia.name}</p>
+          </div>
+        ))}
+      </div>
+      {/* <div className="todas-tarjetas">
         <div className="tarjeta-tec">
           <img src={htmlLogo} alt="logo-html" />
           <p>HTML</p>
@@ -40,7 +57,7 @@ const Tecnologias = () => {
           <img src={jsIcon} alt="JavaScript_icon" />
           <p>JavaScript</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

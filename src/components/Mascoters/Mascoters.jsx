@@ -8,7 +8,7 @@ const Mascoters = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const url = 'http://localhost:8080/services';
+    const url = 'https://xuavia.onrender.com/services';
 
     axios.get(url)
       .then((response) => {
@@ -27,8 +27,8 @@ const Mascoters = () => {
           servicios.map((servicio) => (
             <div key={servicio._id} className="card-user">
               <div className="info-user">
-                <img className="foto-perfil" src={servicio.imagen} alt="foto-perfil" />
-                <Anchor to='/' className="header">
+                <img className="foto-perfil" src={servicio?.image} alt="foto-perfil" />
+                <Anchor to={`/servicios/${servicio._id}`} className="header">
                   {servicio.name}
                 </Anchor>
               </div>

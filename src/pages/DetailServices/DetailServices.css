@@ -1,0 +1,8 @@
+.detail{
+    min-height: 70vh;
+}
+.detail-service{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
