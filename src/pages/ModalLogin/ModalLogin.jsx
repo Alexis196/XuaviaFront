@@ -19,7 +19,7 @@ const ModalLogin = () => {
         mail: mail.current.value,
         password: password.current.value
       }
-      const response = await axios.post('http://localhost:8080/users/signin', formData);
+      const response = await axios.post('https://xuavia.onrender.com/users/signin', formData);
       localStorage.setItem('user', JSON.stringify(response.data));
       setUser(response.data);
       event.target.reset();

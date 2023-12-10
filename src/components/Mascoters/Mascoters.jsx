@@ -8,7 +8,7 @@ const Mascoters = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const url = 'http://localhost:8080/services';
+    const url = 'https://xuavia.onrender.com/services';
 
     axios.get(url)
       .then((response) => {

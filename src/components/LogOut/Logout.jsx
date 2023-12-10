@@ -10,11 +10,11 @@ const LogOut = ({ onUpdateUser }) => {
         const headers = {
             'Authorization': `Bearer ${localUser.token}`
         };
-        axios.post('http://localhost:8080/users/signout', "", { headers })
+        axios.post('https://xuavia.onrender.com/users/signout', "", { headers })
             .then((response) => {
                 localStorage.removeItem('user');
                 onUpdateUser();
-                toast.success('Esperamos que pronto estés devuelta', {
+                toast.success('Esperamos que pronto estés de vuelta', {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,

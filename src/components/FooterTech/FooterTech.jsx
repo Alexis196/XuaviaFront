@@ -6,7 +6,7 @@ const Tecnologias = () => {
   const [tecnologias, setTecnologias] = useState([]);
 
   useEffect(() => {
-    const url = 'http://localhost:8080/technologies';
+    const url = 'https://xuavia.onrender.com/technologies';
     axios.get(url)
       .then((response) => {
         const tecnologias = response.data.technologies;

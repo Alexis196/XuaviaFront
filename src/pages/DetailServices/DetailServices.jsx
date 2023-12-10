@@ -8,7 +8,7 @@ const DetailServices = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:8080/services/${id}`;
+        const url = `https://xuavia.onrender.com/services/${id}`;
 
         axios.get(url)
             .then((response) => {

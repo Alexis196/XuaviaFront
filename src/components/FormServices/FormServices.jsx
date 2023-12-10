@@ -15,7 +15,7 @@ const FormServices = () => {
 
 
         useEffect(() => {
-            const url = 'http://localhost:8080/categories'
+            const url = 'https://xuavia.onrender.com/categories'
             axios.get(url)
                 .then((response) => {
                     setCategories(response.data)
@@ -42,7 +42,7 @@ const FormServices = () => {
             category: category.current.value,
         };
 
-        const url = 'http://localhost:8080/services/addservices';
+        const url = 'https://xuavia.onrender.com/services/addservices';
         axios.post(url, data, headers)
             .then((response) => {
                 toast.success('Felicitaciones! Nuevo servicio creado', {

@@ -8,7 +8,7 @@ const TeamFooter = () => {
 
 
   useEffect(() => {
-    const url = 'http://localhost:8080/team';
+    const url = 'https://xuavia.onrender.com/team';
     axios.get(url)
       .then((response) => {
         const integrantes = response.data.team;

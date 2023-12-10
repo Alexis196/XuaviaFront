@@ -16,7 +16,7 @@ function Register() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/roles')
+      .get('https://xuavia.onrender.com/roles')
       .then((response) => {
         setNewRol(response.data.rol);
       })
@@ -34,7 +34,7 @@ function Register() {
       rol: rol.current.value
     };
     try{
-      axios.post('http://localhost:8080/users', user);
+      axios.post('https://xuavia.onrender.com/users', user);
       toast.success(`Bienvenido ${user.name}. Por favor inicia sesión`, {
         position: "top-right",
         autoClose: 2000,
