@@ -7,6 +7,7 @@ import Login from '../Login/Login'
 
 
 const Navbar = () => {
+    const token = JSON.parse(localStorage.getItem('user'))?.token
     const [isLogin, setIsLogin] = useState(false)
     function handleLogin() {
         setIsLogin(!isLogin)
@@ -24,17 +25,17 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse links" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
+                    {token ? (<ul className="navbar-nav">
                         <li className="nav-item">
                             <Anchor className="nav-link" to={'/'} style={{ color: 'white' }}>Inicio</Anchor>
                         </li>
                         <li className="nav-item" id="nav1">
-                            <Anchor className="nav-link" to={'/servicios'} style={{ color: 'white' }}>Mascotas</Anchor>
+                            <Anchor className="nav-link" to={'/servicios'} style={{ color: 'white' }}>Servicios</Anchor>
                         </li>
                         <li className="nav-item" id="nav2">
                             <Anchor className="nav-link" to={'/nosotros'} style={{ color: 'white' }}>Nosotros</Anchor>
                         </li>
-                    </ul>
+                    </ul>): ''}
                     <img onClick={handleLogin} className='icon-user' src={user} alt="icon-user" />
                     {isLogin && <Login />}
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './section-us.css';
 
-const NosotrosSection = ({ title, content, sectionClass }) => {
+const NosotrosSection = ({ title, content }) => {
   return (
     <div className="nos">
       <h2>{title}</h2>

@@ -15,3 +15,17 @@
     color: #fff;
     gap: 0.5rem;
 }
+.span-ps{
+    font-size: 10px;
+}
+
+@media(max-width: 768px) {
+    .register-box {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+    }
+    #form-login span, .btn-register{
+        font-size: 14px;
+    }
+  }

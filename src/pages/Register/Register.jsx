@@ -94,7 +94,7 @@ function Register() {
               ref={password}
               required
             />
-            <label>Contraseña</label>
+            <label>Contraseña <span className="span-ps">* mínimo 8 caracteres *</span></label>
           </div>
           <div className="select">
             <label>Rol:</label>

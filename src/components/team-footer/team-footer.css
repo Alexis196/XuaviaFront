@@ -28,3 +28,22 @@
 .linkedin{
     width: 24px;
 }
+@media(max-width: 375px){
+    .equipo{
+        width: 100%;
+        margin: auto;
+    }
+    .integrante{
+        width: 300px;
+    }
+}
+
+@media(max-width: 325px){
+    .equipo{
+        width: 100%;
+        margin: auto;
+    }
+    .integrante{
+        width: 300px;
+    }
+}

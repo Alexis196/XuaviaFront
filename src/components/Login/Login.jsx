@@ -29,11 +29,15 @@ function Login() {
                 <LogOut onUpdateUser={handleUserUpdate} />
             ) : (
                 <>
-                    <Anchor to="/iniciosesion" className="login-text" onClick={handleInicio}>
-                        Iniciar sesión
+                    <Anchor to="/iniciosesion" className="anchor" onClick={handleInicio}>
+                        <button className="login-text">
+                            Iniciar sesión
+                        </button>
                     </Anchor>
-                    <Anchor to="/registro" className="login-text">
-                        Regístrate
+                    <Anchor to="/registro" className="anchor">
+                        <button className="login-text">
+                            Regístrate
+                        </button>
                     </Anchor>
                 </>
             )}

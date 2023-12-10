@@ -1,7 +1,7 @@
 import React from 'react';
 import './mision-section.css';
 
-const NosotrosSection = ({ title, content, sectionClass }) => {
+const MisionSection = ({ title, content, sectionClass }) => {
   return (
     <div className="mision">
       <h2>{title}</h2>
@@ -10,4 +10,4 @@ const NosotrosSection = ({ title, content, sectionClass }) => {
   );
 };
 
-export default NosotrosSection;
+export default MisionSection;

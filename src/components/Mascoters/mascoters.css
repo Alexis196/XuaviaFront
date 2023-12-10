@@ -1,4 +1,4 @@
-.seccion-mascoter {
+.servicios-cards {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -13,6 +13,18 @@
     justify-content: space-around;
     gap: 2rem;
 }
-.card-user{
-    min-width: 280px;
+.card-service{
+    padding: .5rem;
+    width: 320px;
+    height: 140px;
+    border: 1px solid rgb(74, 194, 194);
+}
+.anchor-tarjet{
+    text-decoration: none;
+    height: 100%;
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }

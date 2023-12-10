@@ -32,3 +32,27 @@
 .todas-tarjetas p{
     margin: 0;
 }
+
+@media(max-width: 475px) {
+    .tecnologias {
+        width: 375px;
+    }
+    .todas-tarjetas{
+        width: 100%;
+    }
+    .tarjeta-tec{
+        width: 160px;
+    }
+}
+
+@media(max-width: 375px) {
+    .tecnologias {
+        width: 320px;
+    }
+    .todas-tarjetas{
+        width: 100%;
+    }
+    .tarjeta-tec{
+        width: 120px;
+    }
+}
