@@ -1,7 +1,23 @@
 import './contact-footer-form.css';
+import { toast } from 'react-toastify';
 const FormContact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success('Muchas gracias! Pronto nos pondremos en contacto contigo', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+    e.target.reset()
+  };
+
   return (
-    <form className="form-contact">
+    <form className="form-contact" onSubmit={handleSubmit}>
       <h3>Contacto</h3>
       <fieldset className="campos">
         <label htmlFor="nombre">Nombre</label>
@@ -19,7 +35,7 @@ const FormContact = () => {
         <label htmlFor="mensaje">Mensaje</label>
         <textarea className="campos-input" name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Ingrese su mensaje" required></textarea>
       </fieldset>
-      <input type="submit" className="enviar" />
+      <button className="enviar" >Enviar </button>
     </form>
   );
 };

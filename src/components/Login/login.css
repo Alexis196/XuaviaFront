@@ -1,4 +1,4 @@
-.login{
+.login {
     width: 150px;
     height: 120px;
     display: flex;
@@ -11,9 +11,31 @@
     right: 0px;
     z-index: 20;
 }
+
+.anchor {
+    text-decoration: none;
+}
+
 .login-text {
-    margin: 0;
-    height: 30px;
-    font-size: 17px;
-    color: #fff;
+    text-decoration: none;
+    width: 120px;
+    border: 2px solid rgb(74, 194, 194);
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(74, 194, 194);
+    font-weight: 700;
+    align-self: flex-end;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+@media(max-width: 991px) {
+    .icon-user {
+        margin: 1rem;
+    }
+
+    .login {
+        position: relative;
+        top: 0;
+    }
 }

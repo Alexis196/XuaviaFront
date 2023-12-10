@@ -12,6 +12,7 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -56,8 +57,27 @@
 }
 
 .recomendacion {
-        width: 70%;
+    width: 70%;
     margin: 0;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     text-align: start;
+}
+
+
+@media(max-width: 991px) {
+    .card-user {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+
+@media(max-width: 320px) {
+    .cards-reco{
+        width: 100%;
+        margin: 0;
+    }
+    .card-user {
+        width: 100%;
+    }
 }

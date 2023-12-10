@@ -1,73 +1,9 @@
-/* .nos,
-.mascoters,
-.pasos {
-    width: 55%;
-    height: 50%;
-    margin-top: 50px;
-    margin-left: 35px;
-    text-align: end;
-    border: 1px dashed rgb(74, 194, 194);
-    padding: 1rem;
+.content-nos{
+    margin: 0;
+    padding: 2rem 0;
+    width: 100%;
+    background: url(../../assets/img/fondo.png);
     display: flex;
-    box-shadow: 5px 5px 20px;
-    text-shadow: 0px 0px 1px #000;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgba(255, 255, 255, 0.774);
-    backdrop-filter: blur(5px);
+    flex-direction: column;
+    gap: 2rem;
 }
-
-
-.mision,
-.comunidad,
-.contacto {
-    width: 55%;
-    height: 50%;
-    margin-top: 50px;
-    margin-left: 40%;
-    text-align: center;
-    border: 1px dashed rgba(73, 196, 114, 0.63);
-    padding: 1rem;
-    display: flex;
-    flex-direction: row-reverse;
-    box-shadow: 5px 5px 20px;
-    text-shadow: 0px 0px 1px #000;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgba(255, 255, 255, 0.774);
-    backdrop-filter: blur(5px);
-}
-
-.mision,
-.comunidad,
-.contacto,
-.nos,
-.mascoters,
-.pasos p {
-    text-align: start;
-}
-
-.banner-img {
-    object-fit: cover;
-}
-
-.contacto {
-    margin-bottom: 20px;
-}
-
-h1 {
-    text-align: center;
-    font-family: 'Josefin', sans-serif;
-    font-size: 60px;
-    font-weight: 100;
-    color: #fff;
-    position: absolute;
-    top: 48%;
-    left: 51%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 1px;
-    border-radius: 10px;
-} */

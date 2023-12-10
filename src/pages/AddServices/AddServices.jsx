@@ -5,21 +5,23 @@ import { useEffect, useState } from "react"
 import '../../components/Proteccion/Proteccion.css'
 
 const AddServices = () => {
-  const [rol, setRol] = useState('')
+  const [rol, setRol] = useState('');
 
-  const user = JSON.parse(localStorage.getItem('user'))
-  const token = user?.token
-  console.log(user.rol)
+  const user = JSON.parse(localStorage.getItem('user'));
+  const token = user?.token;
+
   useEffect(() => {
-    const url = 'https://xuavia.onrender.com/roles'
-    axios.get(url)
-      .then((response) => {
-        setRol(response.data.rol[0]._id)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+    if (token) {
+      const url = 'https://xuavia.onrender.com/roles';
+      axios.get(url)
+        .then((response) => {
+          setRol(response.data.rol[0]._id);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [token]);
 
   return (
     <>

@@ -62,7 +62,7 @@ const ModalLogin = () => {
   return (
     <div className="show-modal" id="login-modal">
       <div className="login-box">
-        <h2>Login</h2>
+        <h2>Iniciar sesión</h2>
         <form id="form-login" className="form-login" onSubmit={handleSubmit}>
           <div className="user-box">
             <input

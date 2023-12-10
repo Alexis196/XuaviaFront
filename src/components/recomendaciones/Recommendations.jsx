@@ -7,7 +7,6 @@ const Recomendaciones = () => {
   return (
     <section className="section-recomendaciones">
       <h3>Algunos comentarios que recibimos por parte de nuestra comunidad</h3>
-      <div id="card-reco"></div>
       <div className="cards-reco">
         <div className="card-user">
           <div className="info-user">

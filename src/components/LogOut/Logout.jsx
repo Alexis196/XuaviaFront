@@ -37,7 +37,7 @@ const LogOut = ({ onUpdateUser }) => {
 
     return (
         <div>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
+            <button className='btn-logout' onClick={handleLogout}>Cerrar Sesión</button>
         </div>
     );
 };

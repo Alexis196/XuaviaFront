@@ -1,12 +1,9 @@
-.mision,
-.comunidad,
-.contacto {
+.mision {
     width: 55%;
     height: 50%;
-    margin-top: 50px;
-    margin-left: 40%;
+    margin-left: 42%;
     text-align: center;
-    border: 1px dashed rgba(73, 196, 114, 0.63);
+    border: 1px solid rgba(73, 196, 114, 0.63);
     padding: 1rem;
     display: flex;
     flex-direction: row-reverse;
@@ -16,4 +13,23 @@
     gap: 1rem;
     background-color: rgba(255, 255, 255, 0.774);
     backdrop-filter: blur(5px);
+}
+
+@media(max-width: 475px) {
+    .todas-tarjetas {
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    .mision,
+    .comunidad,
+    .contacto,
+    .nos,
+    .mascoters,
+    .pasos {
+        text-align: center;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
 }
