@@ -1,13 +1,36 @@
 import FormServices from "../../components/FormServices/FormServices"
 import Proteccion from "../../components/Proteccion/Proteccion"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import '../../components/Proteccion/Proteccion.css'
 
 const AddServices = () => {
-  const token = JSON.parse(localStorage.getItem('user'))?.token
+  const [rol, setRol] = useState('')
+
+  const user = JSON.parse(localStorage.getItem('user'))
+  const token = user?.token
+  console.log(user.rol)
+  useEffect(() => {
+    const url = 'https://xuavia.onrender.com/roles'
+    axios.get(url)
+      .then((response) => {
+        setRol(response.data.rol[0]._id)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [])
+
   return (
     <>
       {token ? (
         <div>
-          <FormServices />
+          {rol === user.rol ? (
+            <FormServices />
+          ) : (
+            <div className="content-protect bg-secondary">
+              <p className="title-protect2">Debes ser un Mascoter para poder publicar un nuevo servicio</p>
+            </div>)}
         </div>
       ) : <Proteccion />}
     </>
