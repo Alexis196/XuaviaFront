@@ -1,8 +1,32 @@
 .detail{
     min-height: 70vh;
-}
-.detail-service{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+}
+.detail-service{
+    width: 70%;
+    height: 50vh;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid rgb(74, 194, 194);
+}
+.title-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    color: #fff;
+}
+.title-service img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+.description-service{
+    font-size: 18px;
+    color: #fff;
 }
