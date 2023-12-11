@@ -1,7 +1,6 @@
 import './team-footer.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-// import linkedinLogo from '../../assets/img/linkedIn_logo.png';
 
 const TeamFooter = () => {
   const [integrantes, setIntegrantes] = useState([]);
