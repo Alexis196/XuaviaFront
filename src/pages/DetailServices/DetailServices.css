@@ -30,3 +30,15 @@
     font-size: 18px;
     color: #fff;
 }
+
+@media(max-width: 768px){
+    .detail-service{
+        margin: 1rem;
+        flex-direction: column;
+        height: 100%;
+    }
+    .card-service{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
