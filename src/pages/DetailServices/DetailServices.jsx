@@ -27,11 +27,11 @@ const DetailServices = () => {
             {token ? (
                 <div className='detail bg-secondary'>
                     <div className='detail-service'>
-                        <div>
+                        <div className='title-service'>
                             <img src={service.image} alt={service.name} />
                             <h2>{service.name}</h2>
                         </div>
-                        <div>
+                        <div className='description-service'>
                             <h3>Descripción del servicio:</h3>
                             <p>{service.detail}</p>
                             <p>Precio: ${service.price}</p>
