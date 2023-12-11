@@ -1,10 +1,11 @@
 import './team-footer.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import linkedinLogo from '../../assets/img/linkedIn_logo.png';
+// import linkedinLogo from '../../assets/img/linkedIn_logo.png';
 
 const TeamFooter = () => {
   const [integrantes, setIntegrantes] = useState([]);
+  const [link, setLink] = useState([]);
 
 
   useEffect(() => {
@@ -17,6 +18,17 @@ const TeamFooter = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+    
+    const urlLink = 'https://xuavia.onrender.com/technologies';
+    axios.get(urlLink)
+      .then((response) => {
+        const tecnologias = response.data.technologies;
+        setLink(tecnologias[10]);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      })
+
   }, [])
 
   return (
@@ -27,7 +39,7 @@ const TeamFooter = () => {
           <img className="foto-integrante" src={integrante.foto} alt={integrante.nombre} />
           <span>⭐{integrante.nombre} 🐶</span>
           <a href={integrante.linkedin} target="_blank">
-            <img className="linkedin" src={linkedinLogo} alt="linkedin_logo" />
+            <img className="linkedin" src={link.image} alt="link.name" />
           </a>
         </div>))}
     </div>

@@ -28,36 +28,6 @@ const Tecnologias = () => {
           </div>
         ))}
       </div>
-      {/* <div className="todas-tarjetas">
-        <div className="tarjeta-tec">
-          <img src={htmlLogo} alt="logo-html" />
-          <p>HTML</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={cssLogo} alt="logo-css" />
-          <p>CSS</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={bootstrapLogo} alt="Bootstrap_logo" />
-          <p>Bootstrap</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={trelloIcon} alt="trello_icon" />
-          <p>Trello</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={gitIcon} alt="git_icon" />
-          <p>Git</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={githubIcon} alt="github_icon" />
-          <p>Github</p>
-        </div>
-        <div className="tarjeta-tec">
-          <img src={jsIcon} alt="JavaScript_icon" />
-          <p>JavaScript</p>
-        </div>
-      </div> */}
     </div>
   );
 };
